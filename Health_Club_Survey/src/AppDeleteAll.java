@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class AppDeleteAll {
     public void DeleteAllFunction(Statement statement, Scanner scanner) {
         // 커맨드 받기.
-        System.out.print("이름을 입력해주세요 :");
+        System.out.print("이름을 입력해주세요 : ");
         String name = scanner.next();
-        System.out.print("비밀번호를 입력해주세요 :");
+        System.out.print("비밀번호를 입력해주세요 : ");
         String password = scanner.next();
 
         if (name.equals("관리자") && password.equals("password6")) {
@@ -21,8 +21,8 @@ public class AppDeleteAll {
 
                 if (resultSet.isBeforeFirst()) {
 
-                    System.out.println("\n== 로그인에 성공했습니다. ==\n");
-                    System.out.print("전체설문내역을 삭제하시겠습니까? [Y/N] :");
+                    System.out.println("\n=== 로그인에 성공했습니다. ===\n");
+                    System.out.print("전체설문내역을 삭제하시겠습니까? [Y/N] : ");
                     String yORn = scanner.next();
                     boolean flag = true;
                     while (flag) {
@@ -44,14 +44,14 @@ public class AppDeleteAll {
                             flag = false;
                         } else {
                             System.out.println("다시 입력해주세요.");
-                            System.out.print("개인설문내역을 삭제하시겠습니까? [Y/N] :");
+                            System.out.print("개인설문내역을 삭제하시겠습니까? [Y/N] : ");
                             yORn = scanner.next();                           
                         }
                     }
                     //버퍼 제거 ㅠ
                     scanner.nextLine();
                 } else {
-                    System.out.println("관리자정보가 일치하지 않습니다, 다시 시도해주세요.");
+                    System.out.println("관리자정보가 일치하지 않습니다. 다시 시도해주세요.");
                 }
 
             } catch (Exception exception) {

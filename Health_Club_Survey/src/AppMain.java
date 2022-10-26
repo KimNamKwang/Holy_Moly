@@ -48,7 +48,7 @@ public class AppMain {
                         new AppDeleteAll().DeleteAllFunction(statement, scanner);
                         break;
                     default:
-                        System.out.println("\n다시 선택하여 주십시오");
+                        System.out.println("\n다시 선택하여 주십시오.");
                         break;
                 }
             } while (!input.equals("Q"));

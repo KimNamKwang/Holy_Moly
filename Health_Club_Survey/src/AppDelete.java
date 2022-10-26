@@ -19,8 +19,8 @@ public class AppDelete {
 
             if (resultSet.isBeforeFirst()) {
 
-                System.out.println("\n== 로그인에 성공했습니다. ==\n");
-                System.out.print("개인설문내역을 삭제하시겠습니까? [Y/N] :");
+                System.out.println("\n=== 로그인에 성공했습니다. ===\n");
+                System.out.print("개인설문내역을 삭제하시겠습니까? [Y/N] : ");
                 String yORn = scanner.next();
                 boolean flag = true;
 
@@ -50,7 +50,7 @@ public class AppDelete {
                         flag = false;
                     } else {
                         System.out.println("다시 입력해주세요.");
-                        System.out.print("개인설문내역을 삭제하시겠습니까? [Y/N] :");
+                        System.out.print("개인설문내역을 삭제하시겠습니까? [Y/N] : ");
                         yORn = scanner.next();
 
                     }

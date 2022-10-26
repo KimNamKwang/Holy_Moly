@@ -29,6 +29,7 @@ public class AppStart {
                                 System.out.println("(1)매우만족 (2)만족 (3)보통 (4)불만 (5)매우불만");
                                 System.out.print("답) ");
                                 num = scanner.nextInt();
+                                System.out.println();
 
                                 switch(num) {
                                     case 1 :

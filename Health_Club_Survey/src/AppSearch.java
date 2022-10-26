@@ -7,10 +7,13 @@ public class AppSearch {
     
         System.out.println("---------------------------------------------------");
         System.out.println("설문내역을 확인 하실 수 있습니다. 이름과 비밀번호를 입력해주세요.");
+        System.out.println();
         System.out.print("이름을 입력해주세요 : ");
         String name = scanner.next();
         System.out.print("비밀번호를 입력해주세요 : ");
         String password = scanner.next();
+        System.out.println();
+
 
         String query = "SELECT * FROM user WHERE NAME = '" + name + "' AND PASSWORD = '" + password + "';";
         try {

@@ -25,6 +25,7 @@ public class AppMain {
                         + "----------------------------------------------------------------------------------\n"
                         + "선택 : ");
                 input = scanner.nextLine();
+                System.out.println();
                 switch (input) {
                     case "P":
                         new AppStart().startFunction(statement, scanner, connection);

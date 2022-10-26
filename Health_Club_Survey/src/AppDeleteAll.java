@@ -9,6 +9,7 @@ public class AppDeleteAll {
         String name = scanner.next();
         System.out.print("비밀번호를 입력해주세요 : ");
         String password = scanner.next();
+        System.out.println();
 
         if (name.equals("관리자") && password.equals("password6")) {
 
@@ -24,6 +25,7 @@ public class AppDeleteAll {
                     System.out.println("\n=== 로그인에 성공했습니다. ===\n");
                     System.out.print("전체설문내역을 삭제하시겠습니까? [Y/N] : ");
                     String yORn = scanner.next();
+                    System.out.println();
                     boolean flag = true;
                     while (flag) {
 

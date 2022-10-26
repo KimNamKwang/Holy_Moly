@@ -48,11 +48,10 @@ public class AppDeleteAll {
                             yORn = scanner.next();                           
                         }
                     }
-                    //버퍼 제거 ㅠ
-                    scanner.nextLine();
                 } else {
                     System.out.println("관리자정보가 일치하지 않습니다. 다시 시도해주세요.");
                 }
+
 
             } catch (Exception exception) {
                 exception.printStackTrace();
@@ -62,6 +61,9 @@ public class AppDeleteAll {
         } else {
             System.out.println("가입된 정보가 일치 하지 않습니다!  전체삭제는 관리자만 가능합니다..람쥐 :)");
         }
+        //버퍼 제거 ㅠ
+        System.out.println();
+        scanner.nextLine();
     }
 
 }

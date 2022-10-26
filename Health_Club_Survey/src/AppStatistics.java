@@ -24,8 +24,11 @@ public class AppStatistics {
                 System.out.print(resultSet.getString("(3)보통") + "\t\t");
                 System.out.print(resultSet.getString("(4)불만") + "\t\t");
                 System.out.print(resultSet.getString("(5)매우불만") + "\t\t");
-                System.out.println();  
+                System.out.println();
             }
+            System.out.print("---------------------------------\n"
+            + "통계 종료\n"
+            + "---------------------------------\n\n");
 
             
         } catch (SQLException e) {

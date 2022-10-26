@@ -23,7 +23,8 @@ public class AppCheck {
                 System.out.println("-------------------------------");
                 System.out.println("이미 가입된 회원입니다.");
                 System.out.println("-------------------------------");
-            } 
+            }
+            System.out.println(); 
             
         } catch (SQLException e) {
             e.printStackTrace();

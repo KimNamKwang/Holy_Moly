@@ -57,6 +57,9 @@ public class AppSearch {
                 System.out.println("회원정보가 일치하지 않습니다. 다시 시도해주세요.");
 
             }
+            System.out.println();
+            //버퍼 제거 ㅠ
+            scanner.nextLine();
 
         } catch (Exception exception) {
             exception.printStackTrace();

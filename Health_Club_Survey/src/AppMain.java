@@ -30,7 +30,7 @@ public class AppMain {
                         new AppStart().startFunction(statement, scanner, connection);
                         break;
                     case "S":
-
+                        new AppStatistics().statisticsFunction(statement, scanner);
                         break;
                     case "Q":
                         System.out.println("프로그램을 종료합니다.");

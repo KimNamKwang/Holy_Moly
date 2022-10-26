@@ -47,10 +47,9 @@ public class AppSearch {
                     ResultSet resultSet2 = statement.executeQuery(query);
                     if (resultSet2.isBeforeFirst()) {
                         System.out.println(name + "님의 설문내역입니다." + "\n");
-                        while (resultSet2.next()) {
-                            System.out.print("성함 :" + resultSet2.getString("user.NAME"));
-                            System.out.print(",설문내용 :" + resultSet2.getString("question.QUESTION"));
-                            System.out.print(", 답항 :" + resultSet2.getString("answer.ANSWER"));
+                        while (resultSet2.next()) {                           
+                            System.out.print("설문내용 :" + resultSet2.getString("question.QUESTION") + "\n");
+                            System.out.print("답항 :" + resultSet2.getString("answer.ANSWER"));
                             System.out.println("");
                         }
                     }

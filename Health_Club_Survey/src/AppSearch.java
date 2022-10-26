@@ -22,20 +22,29 @@ public class AppSearch {
             if (resultSet.isBeforeFirst()) {
                 System.out.println("\n=== 로그인에 성공했습니다. ===\n");
                 if (name.equals("관리자") && (password.equals("password6"))) {
-                    System.out.print("전체설문내역을 출력합니다.");
-                    System.out.println("----------------------------------------");
-                    query = "SELECT * FROM survey;";
+                    System.out.println("전체설문내역을 출력합니다.\n");
+                    System.out.println("----------------------------------------\n");
+                    String[] userName = new String[]{"홍길동", "박보검","강형욱","오은영","강형욱"};
+                    String[] userID = new String[]{"USER1", "USER2","USER3","USER4","USER5"};
+
+                    for(int i=0; i<userName.length; i++){
+                        query = "SELECT user.NAME, user.USER_ID, answer.ANSWER, survey.QUESTION_ID, question.QUESTION FROM survey " +
+                    " INNER JOIN user on user.USER_ID = survey.USER_ID INNER JOIN question ON question.QUESTION_ID =" + 
+                    "survey.QUESTION_ID INNER JOIN answer ON answer.ANSWER_ID = survey.ANSWER_ID WHERE NAME = '"+userName[i] +"' AND survey.USER_ID = '"+ userID[i] +"';";
+                    
                     ResultSet resultSet1 = statement.executeQuery(query);
+
+                    System.out.print(userName[i] + "님의 설문내역을 출력합니다." + "\n");
+                    System.out.println("----------------------------------------");
                     if (resultSet1.isBeforeFirst()) {
                         while (resultSet1.next()) {
-                            System.out.print("USER_ID :" + resultSet1.getString("USER_ID"));
-                            System.out.print(", ANSWER_ID :" + resultSet1.getString("ANSWER_ID"));
-                            System.out.print(", QUESTION_ID :" + resultSet1.getString("QUESTION_ID"));
+                            System.out.print("설문내용 :" + resultSet1.getString("question.QUESTION") + "\n");
+                            System.out.print("답항 :" + resultSet1.getString("answer.ANSWER"));
                             System.out.println("");
                         }
-
+                        System.out.println("----------------------------------------\n");
                     }
-
+                    }
                 } else if (!name.equals("관리자") && (!password.equals("password6"))) {
 
                    

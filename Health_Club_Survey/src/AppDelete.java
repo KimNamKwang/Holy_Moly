@@ -10,6 +10,7 @@ public class AppDelete {
         String name = scanner.next();
         System.out.print("비밀번호를 입력해주세요 : ");
         String password = scanner.next();
+        System.out.println();
         String query = "SELECT * FROM user WHERE NAME = '" + name + "' AND PASSWORD = '" + password + "';";
 
         try {
@@ -22,6 +23,7 @@ public class AppDelete {
                 System.out.println("\n=== 로그인에 성공했습니다. ===\n");
                 System.out.print("개인설문내역을 삭제하시겠습니까? [Y/N] : ");
                 String yORn = scanner.next();
+                System.out.println();
                 boolean flag = true;
 
                 while (flag) {

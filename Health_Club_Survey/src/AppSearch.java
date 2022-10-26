@@ -38,17 +38,19 @@ public class AppSearch {
 
                 } else if (!name.equals("관리자") && (!password.equals("password6"))) {
 
-                    System.out.print("개인설문내역을 출력합니다.");
+                   
+                    System.out.print(name + "님의 설문내역을 출력합니다." + "\n");
                     System.out.println("----------------------------------------");
-                    query = "SELECT * FROM survey WHERE USER_ID IN (SELECT USER_ID FROM user WHERE NAME = '" + name
-                            + "');";
+                    query = "SELECT user.NAME, user.USER_ID, answer.ANSWER, survey.QUESTION_ID, question.QUESTION FROM survey " +
+                     " INNER JOIN user on user.USER_ID = survey.USER_ID INNER JOIN question ON question.QUESTION_ID = survey.QUESTION_ID INNER JOIN answer ON answer.ANSWER_ID = survey.ANSWER_ID WHERE NAME = '"+name +"';";
 
                     ResultSet resultSet2 = statement.executeQuery(query);
                     if (resultSet2.isBeforeFirst()) {
+                        System.out.println(name + "님의 설문내역입니다." + "\n");
                         while (resultSet2.next()) {
-                            System.out.print("USER_ID :" + resultSet2.getString("USER_ID"));
-                            System.out.print(", ANSWER_ID :" + resultSet2.getString("ANSWER_ID"));
-                            System.out.print(", QUESTION_ID :" + resultSet2.getString("QUESTION_ID"));
+                            System.out.print("성함 :" + resultSet2.getString("user.NAME"));
+                            System.out.print(",설문내용 :" + resultSet2.getString("question.QUESTION"));
+                            System.out.print(", 답항 :" + resultSet2.getString("answer.ANSWER"));
                             System.out.println("");
                         }
                     }

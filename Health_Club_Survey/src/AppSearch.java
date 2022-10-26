@@ -3,8 +3,8 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class AppSearch {
-    public void SearchFunction(Statement statement) {
-        Scanner scanner = new Scanner(System.in);
+    public void SearchFunction(Statement statement,Scanner scanner) {
+    
         System.out.println("---------------------------------------------------");
         System.out.println("설문내역을 확인 하실 수 있습니다. 이름과 비밀번호를 입력해주세요.");
         System.out.print("이름을 입력해주세요 :");
@@ -63,11 +63,3 @@ public class AppSearch {
         }
     }
 }
-
-// 입력받은 이름으로 auth_unique_id 뽑아내는것을 ㅗ바꾸기
-
-// SELECT AUTH_UNIQUE_ID
-// FROM user_auth
-// where USER_ID IN (SELECT USER_ID
-// FROM user
-// WHERE NAME IN ('관리자'));

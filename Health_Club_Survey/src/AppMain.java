@@ -42,7 +42,7 @@ public class AppMain {
                         new AppCheck().checkFuction(statement, scanner);
                         break;
                     case "SR":
-
+                        new AppSearch().SearchFunction(statement, scanner);
                         break;
                     case "DA":
                         new AppDeleteAll().DeleteAllFunction(statement, scanner);

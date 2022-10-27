@@ -19,6 +19,7 @@ public class AppDeleteAll {
                 break;
             }else if(!name.equals("관리자")){
                 System.out.println("전체삭제는 관리자만 가능합니다! 개인 설문내역 삭제는 D 메뉴를 이용해주세요. :) ");
+                break;
             }else{
                 System.out.println("관리자정보가 일치하지 않습니다. 다시 시도해주세요.");
             }
@@ -36,7 +37,7 @@ public class AppDeleteAll {
 
                 if (resultSet.isBeforeFirst()) {
 
-                    System.out.println("\n=== 로그인에 성공했습니다. ===\n");
+                    System.out.println("=== 로그인에 성공했습니다. ===\n");
                     System.out.print("전체설문내역을 삭제하시겠습니까? [Y/N] : ");
                     String yORn = scanner.next();
                     System.out.println();
@@ -59,8 +60,8 @@ public class AppDeleteAll {
                             System.out.println("메인으로 돌아갑니다.");
                             flag = false;
                         } else {
-                            System.out.println("다시 입력해주세요.");
-                            System.out.print("개인설문내역을 삭제하시겠습니까? [Y/N] : ");
+                            System.out.println("다시 입력해주세요.\n");
+                            System.out.print("전체설문내역을 삭제하시겠습니까? [Y/N] : ");
                             yORn = scanner.next();                           
                         }
                     }

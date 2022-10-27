@@ -72,6 +72,7 @@ public class AppStart {
                                 System.out.print("---------------------------------\n"
                                 + "설문이 성공적으로 저장되었습니다.\n"
                                 + "---------------------------------\n\n");
+                                scanner.nextLine();
                                 
                         }else {
                             System.out.println("-------------------------------\n"
@@ -79,8 +80,6 @@ public class AppStart {
                                         +"-------------------------------");
                         }
                         System.out.println();
-                        //버퍼 제거 ㅠ
-                        scanner.nextLine();
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }

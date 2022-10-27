@@ -10,7 +10,6 @@ public class AppDelete {
         String name = scanner.next();
         System.out.print("비밀번호를 입력해주세요 : ");
         String password = scanner.next();
-        System.out.println();
         String query = "SELECT * FROM user WHERE NAME = '" + name + "' AND PASSWORD = '" + password + "';";
 
         try {
@@ -42,7 +41,7 @@ public class AppDelete {
 
                         if (!rst.isBeforeFirst()) {
 
-                            System.out.println("삭제가 완료되었습니다.");
+                            System.out.println(name + "님의 설문내역이 삭제되었습니다.");
                             flag = false;
 
                         }

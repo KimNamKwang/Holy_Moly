@@ -26,7 +26,7 @@ public class AppStatistics {
                 System.out.print(resultSet.getString("(5)매우불만") + "\t\t");
                 System.out.println();
             }
-            System.out.print("---------------------------------\n"
+            System.out.print("\n---------------------------------\n"
             + "통계 종료\n"
             + "---------------------------------\n\n");
 

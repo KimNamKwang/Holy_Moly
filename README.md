@@ -1,6 +1,6 @@
 # Holy_Moly(KH_Toy_Project)  
 ### 안지영
-- [메인-선택기능] (AppMain)  
+- [메인-DB접속과 선택기능] (AppMain)  
 ### 이재현  
 - [설문내역검색] (AppSearch)  
 - [통계] (AppStatistics)  

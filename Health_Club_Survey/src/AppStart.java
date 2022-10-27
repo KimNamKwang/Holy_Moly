@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class AppStart {
 
     public void startFunction(Statement statement, Scanner scanner, Connection connection){
-                    System.out.print("\n- 이름을 입력하세요 : ");
+                    System.out.print("- 이름을 입력하세요 : ");
                     String loginName = scanner.nextLine();
                     System.out.print("- 비밀번호를 입력하세요 : ");
                     String loginPassword = scanner.nextLine();
@@ -75,7 +75,7 @@ public class AppStart {
                                 scanner.nextLine();
                                 
                         }else {
-                            System.out.println("-------------------------------\n"
+                            System.out.println("\n-------------------------------\n"
                                         +"회원정보가 없습니다.\n"
                                         +"-------------------------------");
                         }

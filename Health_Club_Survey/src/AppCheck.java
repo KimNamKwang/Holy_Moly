@@ -15,14 +15,14 @@ public class AppCheck {
             resultSet = statement.executeQuery(query);
 
             if(resultSet.next() == false){
-                System.out.println("\n-------------------------------");
-                System.out.println("회원정보가 없습니다.");
-                System.out.println("-------------------------------");
+                System.out.println("\n-------------------------------------------------------------------------------------");
+                System.out.println("회원정보가 없습니다. 메인으로 돌아갑니다.");
+                System.out.println("-------------------------------------------------------------------------------------");
             }
             else{
-                System.out.println("-------------------------------");
+                System.out.println("\n-------------------------------------------------------------------------------------");
                 System.out.println("이미 가입된 회원입니다.");
-                System.out.println("-------------------------------");
+                System.out.println("-------------------------------------------------------------------------------------");
             }
             System.out.println(); 
             

@@ -53,7 +53,7 @@ public class AppStart {
                                             System.out.println("잘못된 숫자입니다.");
                                     }
                                 }catch(InputMismatchException ime){
-                                    System.out.println("숫자만 입력 가능합니다. 메인으로 돌아갑니다.");
+                                    System.out.println("\n숫자만 입력 가능합니다. 메인으로 돌아갑니다.");
                                 }
 
                                 // 오류 해결을 위한 새로운 Statement
@@ -75,15 +75,15 @@ public class AppStart {
                                 query = "INSERT INTO survey (QUESTION_ID,ANSWER_ID,USER_ID) VALUES( '" + QUESTIONID + "', '" + ANSWER + "', '" + USERID + "' );";
                                 statement2.execute(query);
                             }
-                                System.out.print("---------------------------------\n"
-                                + "설문이 성공적으로 저장되었습니다.\n" 
-                                + "---------------------------------\n");
+                                System.out.print("-------------------------------------------------------------------------------------\n"
+                                + "설문 제출이 완료되었습니다.\n" 
+                                + "-------------------------------------------------------------------------------------\n");
                                 scanner.nextLine();
                                 
                         }else {
-                            System.out.println("\n-------------------------------\n"
+                            System.out.println("\n-------------------------------------------------------------------------------------\n"
                                         +"회원정보가 없습니다. 메인으로 돌아갑니다.\n"
-                                        +"-------------------------------");
+                                        +"-------------------------------------------------------------------------------------");
                         }
                         System.out.println();
                     } catch (SQLException e) {

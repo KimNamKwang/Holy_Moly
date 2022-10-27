@@ -22,7 +22,7 @@ public class AppDelete {
             try {
                 resultSet = statement.executeQuery(query);
                 if(!resultSet.isBeforeFirst()){
-                    System.out.println("\n회원정보가 일치하지 않습니다, 다시 시도해주세요.");
+                    System.out.println("\n회원정보가 일치하지 않습니다, 다시 시도해주세요.\n");
                 }
                 else{
                     break;
@@ -66,7 +66,7 @@ public class AppDelete {
                         }
 
                     } else if (yORn.equals("N")) {
-                        System.out.println("메인으로 돌아갑니다.");
+                        System.out.println("\n메인으로 돌아갑니다.");
                         flag = false;
                     } else {
                         System.out.println("다시 입력해주세요.");

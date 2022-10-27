@@ -22,7 +22,7 @@ public class AppSearch {
                 System.out.println("\n=== 로그인에 성공했습니다. ===\n");
                 if (name.equals("관리자") && (password.equals("password6"))) {
                     System.out.println("전체설문내역을 출력합니다.\n");
-                    System.out.println("----------------------------------------\n");
+                    System.out.println("-------------------------------------------------------------------------------------\n");
                     String[] userName = new String[]{"홍길동", "박보검","강형욱","오은영","강형욱"};
                     String[] userID = new String[]{"USER1", "USER2","USER3","USER4","USER5"};
 
@@ -35,20 +35,20 @@ public class AppSearch {
                     
                     if (resultSet1.isBeforeFirst()) {
                         System.out.print(userName[i] + "님의 설문내역을 출력합니다." + "\n");
-                        System.out.println("----------------------------------------");
+                        System.out.println("-------------------------------------------------------------------------------------");
                         while (resultSet1.next()) {
                             System.out.print("설문내용 : " + resultSet1.getString("question.QUESTION") + "\n");
                             System.out.print("답항 : " + resultSet1.getString("answer.ANSWER"));
                             System.out.println("");
                         }
-                        System.out.println("----------------------------------------\n");
+                        System.out.println("-------------------------------------------------------------------------------------\n");
                     }
                     }
                 } else if (!name.equals("관리자") && (!password.equals("password6"))) {
 
                    
                     System.out.print(name + "님의 설문내역을 출력합니다." + "\n");
-                    System.out.println("----------------------------------------");
+                    System.out.println("-------------------------------------------------------------------------------------");
                     query = "SELECT user.NAME, user.USER_ID, answer.ANSWER, survey.QUESTION_ID, question.QUESTION FROM survey " +
                      " INNER JOIN user on user.USER_ID = survey.USER_ID INNER JOIN question ON question.QUESTION_ID = survey.QUESTION_ID INNER JOIN answer ON answer.ANSWER_ID = survey.ANSWER_ID WHERE NAME = '"+name +"';";
 

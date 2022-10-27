@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class AppStatistics {
     public void statisticsFunction(Statement statement, Scanner scanner) {
         
-        System.out.println("\n");
-        
         ResultSet resultSet = null;
         String query = "SELECT QUESTION_ID, SUM(ANSWER_ID = 'ANSWER1') AS '(1)매우만족', SUM(ANSWER_ID = 'ANSWER2') AS '(2)만족'," +
          "SUM(ANSWER_ID = 'ANSWER3') AS '(3)보통', SUM(ANSWER_ID = 'ANSWER4') AS '(4)불만', SUM(ANSWER_ID = 'ANSWER5') AS '(5)매우불만'"+
@@ -16,8 +14,9 @@ public class AppStatistics {
         try {
 
             resultSet = statement.executeQuery(query);
-            
-            System.out.println("설문 내역 통계를 조회합니다.\n");
+            System.out.println("-------------------------------------------------------------------------------------");
+            System.out.println("설문 내역 통계를 조회합니다.");
+            System.out.println("-------------------------------------------------------------------------------------\n");
 
             System.out.println("문항\t  (1)매우만족\t    (2)만족\t    (3)보통\t    (4)불만\t  (5)매우불만\t");
             int i = 1;             
@@ -32,9 +31,9 @@ public class AppStatistics {
                 System.out.println();
                 i++;
             }
-            System.out.print("---------------------------------\n"
-            + "통계 종료\n"
-            + "---------------------------------\n\n");
+            System.out.print("\n-------------------------------------------------------------------------------------\n"
+            + "통계 조회가 완료되었습니다.\n"
+            + "-------------------------------------------------------------------------------------\n\n");
 
             
         } catch (SQLException e) {

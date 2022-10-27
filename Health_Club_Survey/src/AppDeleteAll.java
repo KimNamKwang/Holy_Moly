@@ -38,7 +38,7 @@ public class AppDeleteAll {
 
                             if (!rst.isBeforeFirst()) {
 
-                                System.out.println("전체삭제가 완료되었습니다.");
+                                System.out.println("설문내역이 전체삭제되었습니다.");
                                 flag = false;
                             }
                         } else if (yORn.equals("N")) {

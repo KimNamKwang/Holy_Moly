@@ -16,17 +16,23 @@ public class AppStatistics {
         try {
 
             resultSet = statement.executeQuery(query);
-            System.out.println("QUESTION_ID\t  (1)매우만족\t    (2)만족\t    (3)보통\t    (4)불만\t  (5)매우불만\t");                
+            
+            System.out.println("설문 내역 통계를 조회합니다.\n");
+
+            System.out.println("문항\t  (1)매우만족\t    (2)만족\t    (3)보통\t    (4)불만\t  (5)매우불만\t");
+            int i = 1;             
             while(resultSet.next()){
-                System.out.print(resultSet.getString("QUESTION_ID") + "\t\t");
+                //System.out.print(resultSet.getString("QUESTION_ID") + "\t\t");
+                System.out.print("문항"+i+"\t\t");
                 System.out.print(resultSet.getString("(1)매우만족") + "\t\t");
                 System.out.print(resultSet.getString("(2)만족") + "\t\t");
                 System.out.print(resultSet.getString("(3)보통") + "\t\t");
                 System.out.print(resultSet.getString("(4)불만") + "\t\t");
                 System.out.print(resultSet.getString("(5)매우불만") + "\t\t");
                 System.out.println();
+                i++;
             }
-            System.out.print("\n---------------------------------\n"
+            System.out.print("---------------------------------\n"
             + "통계 종료\n"
             + "---------------------------------\n\n");
 

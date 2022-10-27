@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -26,30 +27,35 @@ public class AppStart {
                                 String QUESTION = resultSet.getString("QUESTION");
                                 String QUESTIONID = resultSet.getString("QUESTION_ID");
                                 System.out.println(QUESTION);
-                                System.out.println("(1)매우만족 (2)만족 (3)보통 (4)불만 (5)매우불만");
-                                System.out.print("답) ");
-                                num = scanner.nextInt();
-                                System.out.println();
-
-                                switch(num) {
-                                    case 1 :
-                                        answer = "(1)매우만족";
-                                        break;
-                                    case 2 :
-                                        answer = "(2)만족";
-                                        break;
-                                    case 3 :
-                                        answer = "(3)보통";
-                                        break;
-                                    case 4 :
-                                        answer = "(4)불만";
-                                        break;
-                                    case 5 :
-                                        answer = "(5)매우불만";
-                                        break;
-                                    default :
-                                        System.out.println("잘못된 숫자입니다.");
+                                try{
+                                    System.out.println("(1)매우만족 (2)만족 (3)보통 (4)불만 (5)매우불만");
+                                    System.out.print("답) ");
+                                    num = scanner.nextInt();
+                                    System.out.println();
+                                
+                                    switch(num) {
+                                        case 1 :
+                                            answer = "(1)매우만족";
+                                            break;
+                                        case 2 :
+                                            answer = "(2)만족";
+                                            break;
+                                        case 3 :
+                                            answer = "(3)보통";
+                                            break;
+                                        case 4 :
+                                            answer = "(4)불만";
+                                            break;
+                                        case 5 :
+                                            answer = "(5)매우불만";
+                                            break;
+                                        default :
+                                            System.out.println("잘못된 숫자입니다.");
+                                    }
+                                }catch(InputMismatchException ime){
+                                    System.out.println("숫자만 입력 가능합니다. 메인으로 돌아갑니다.");
                                 }
+
                                 // 오류 해결을 위한 새로운 Statement
                                 Statement statement2 = connection.createStatement();
                                 
@@ -70,18 +76,18 @@ public class AppStart {
                                 statement2.execute(query);
                             }
                                 System.out.print("---------------------------------\n"
-                                + "설문이 성공적으로 저장되었습니다.\n"
-                                + "---------------------------------\n\n");
+                                + "설문이 성공적으로 저장되었습니다.\n" 
+                                + "---------------------------------\n");
                                 scanner.nextLine();
                                 
                         }else {
                             System.out.println("\n-------------------------------\n"
-                                        +"회원정보가 없습니다.\n"
+                                        +"회원정보가 없습니다. 메인으로 돌아갑니다.\n"
                                         +"-------------------------------");
                         }
                         System.out.println();
                     } catch (SQLException e) {
-                        e.printStackTrace();
+                        scanner.nextLine();
                     }
     }
     

@@ -15,7 +15,7 @@ public class AppCheck {
             resultSet = statement.executeQuery(query);
 
             if(resultSet.next() == false){
-                System.out.println("-------------------------------");
+                System.out.println("\n-------------------------------");
                 System.out.println("회원정보가 없습니다.");
                 System.out.println("-------------------------------");
             }

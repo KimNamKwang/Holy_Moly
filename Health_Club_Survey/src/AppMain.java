@@ -17,12 +17,12 @@ public class AppMain {
             // - query Edit
             Statement statement = connection.createStatement();
 
-            System.out.println("홀리몰리 헬스장 만족도 설문조사\n");
+            System.out.println("<홀리몰리 헬스장 만족도 설문조사>\n");
             String input;
             do {
-                System.out.print("----------------------------------------------------------------------------------\n"
+                System.out.print("-------------------------------------------------------------------------------------\n"
                         + "P. 설문시작 | S. 통계 | D. 삭제 | C. 회원중복확인 | SR. 검색 | DA. 전체삭제 | Q. 종료\n"
-                        + "----------------------------------------------------------------------------------\n"
+                        + "-------------------------------------------------------------------------------------\n"
                         + "선택 : ");
                 input = scanner.nextLine();
                 System.out.println();
@@ -49,7 +49,7 @@ public class AppMain {
                         new AppDeleteAll().DeleteAllFunction(statement, scanner);
                         break;
                     default:
-                        System.out.println("\n다시 선택하여 주십시오.");
+                        System.out.println("\n다시 선택하여 주십시오.\n");
                         break;
                 }
             } while (!input.equals("Q"));

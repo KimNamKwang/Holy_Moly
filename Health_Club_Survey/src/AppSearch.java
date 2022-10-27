@@ -33,15 +33,18 @@ public class AppSearch {
                     "survey.QUESTION_ID INNER JOIN answer ON answer.ANSWER_ID = survey.ANSWER_ID WHERE NAME = '"+userName[i] +"' AND survey.USER_ID = '"+ userID[i] +"';";
                     
                     ResultSet resultSet1 = statement.executeQuery(query);
-
-                    System.out.print(userName[i] + "님의 설문내역을 출력합니다." + "\n");
-                    System.out.println("----------------------------------------");
+                    
                     if (resultSet1.isBeforeFirst()) {
+                        System.out.print(userName[i] + "님의 설문내역을 출력합니다." + "\n");
+                        System.out.println("----------------------------------------");
                         while (resultSet1.next()) {
                             System.out.print("설문내용 :" + resultSet1.getString("question.QUESTION") + "\n");
                             System.out.print("답항 :" + resultSet1.getString("answer.ANSWER"));
                             System.out.println("");
                         }
+                        System.out.println("----------------------------------------\n");
+                    }else{
+                        System.out.print(userName[i] + "님의 설문내역이 없습니다." + "\n");
                         System.out.println("----------------------------------------\n");
                     }
                     }

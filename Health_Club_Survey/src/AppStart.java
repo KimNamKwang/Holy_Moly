@@ -17,7 +17,9 @@ public class AppStart {
                         resultSet = statement.executeQuery(query);
                         //ResultSet resultSet2 = statement.executeQuery(query);
                         if(resultSet.isBeforeFirst()) {
-                            System.out.println("\n== 설문을 시작합니다. ==\n");
+                            System.out.println("\n-------------------------------------------------------------------------------------"+
+                            "설문을 시작합니다."+
+                            "-------------------------------------------------------------------------------------\n");
                             query = "SELECT * FROM question;";
                             resultSet = statement.executeQuery(query);
                             int num;
@@ -53,7 +55,7 @@ public class AppStart {
                                             System.out.println("잘못된 숫자입니다.");
                                     }
                                 }catch(InputMismatchException ime){
-                                    System.out.println("\n숫자만 입력 가능합니다. 메인으로 돌아갑니다.");
+                                    System.out.println("\n숫자만 입력 가능합니다. 메인으로 돌아갑니다.\n");
                                 }
 
                                 // 오류 해결을 위한 새로운 Statement
@@ -71,6 +73,12 @@ public class AppStart {
                                 resultSet2.next();
                                 String USERID = resultSet2.getString("USER_ID");
 
+                                // query = "SELECT * FROM survey WHERE USER_ID = '" + USERID + "';";
+                                // ResultSet resultSet3 = statement.executeQuery(query);
+                                // if(resultSet3.isBeforeFirst()){
+                                //     query="";
+
+                                // }
                                 // INSERT 구문
                                 query = "INSERT INTO survey (QUESTION_ID,ANSWER_ID,USER_ID) VALUES( '" + QUESTIONID + "', '" + ANSWER + "', '" + USERID + "' );";
                                 statement2.execute(query);

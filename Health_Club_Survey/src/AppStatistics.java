@@ -18,7 +18,7 @@ public class AppStatistics {
             System.out.println("설문 내역 통계를 조회합니다.");
             System.out.println("-------------------------------------------------------------------------------------\n");
 
-            System.out.println("문항\t  (1)매우만족\t    (2)만족\t    (3)보통\t    (4)불만\t  (5)매우불만\t");
+            System.out.println("   \t  (1)매우만족\t    (2)만족\t    (3)보통\t    (4)불만\t  (5)매우불만\t");
             int i = 1;             
             while(resultSet.next()){
                 //System.out.print(resultSet.getString("QUESTION_ID") + "\t\t");

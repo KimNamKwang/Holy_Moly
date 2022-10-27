@@ -17,7 +17,7 @@ public class AppMain {
             // - query Edit
             Statement statement = connection.createStatement();
 
-            System.out.println("<홀리몰리 헬스장 만족도 설문조사>\n");
+            System.out.println("< 홀리몰리 헬스장 만족도 설문조사 >\n");
             String input;
             do {
                 System.out.print("-------------------------------------------------------------------------------------\n"

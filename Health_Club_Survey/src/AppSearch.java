@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class AppSearch {
     public void SearchFunction(Statement statement,Scanner scanner) {
     
-        System.out.println("설문내역을 확인 하실 수 있습니다. 이름과 비밀번호를 입력해주세요.");
+        System.out.println("설문내역 확인을 위한 이름과 비밀번호를 입력해주세요.");
         System.out.println();
-        System.out.print("이름을 입력해주세요 : ");
+        System.out.print("- 이름을 입력해주세요 : ");
         String name = scanner.next();
-        System.out.print("비밀번호를 입력해주세요 : ");
+        System.out.print("- 비밀번호를 입력해주세요 : ");
         String password = scanner.next();
         System.out.println();
 
@@ -62,11 +62,11 @@ public class AppSearch {
                         }
                     }
                     else {
-                        System.out.println("설문내역이 존재하지 않습니다.");
+                        System.out.println("참여하신 설문이 없습니다.");
                     }
                 } 
             } else {
-                System.out.println("회원정보가 일치하지 않습니다. 다시 시도해주세요.");
+                System.out.println("회원정보가 일치하지 않습니다. 메인으로 돌아갑니다.");
 
             }
             System.out.println();

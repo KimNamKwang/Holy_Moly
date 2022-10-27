@@ -59,9 +59,9 @@ public class AppDeleteAll {
                 exception.printStackTrace();
             }
         } else if (!name.equals("관리자")) {
-            System.out.println("전체삭제는 관리자만 가능합니다! 개인 설문내역 삭제는 D 메뉴를 이용해주세용..가리 :) ");
+            System.out.println("전체삭제는 관리자만 가능합니다! 개인 설문내역 삭제는 D 메뉴를 이용해주세요. :) ");
         } else {
-            System.out.println("가입된 정보가 일치 하지 않습니다!  전체삭제는 관리자만 가능합니다..람쥐 :)");
+            System.out.println("가입된 정보가 일치 하지 않습니다!  전체삭제는 관리자만 가능합니다. :)");
         }
         //버퍼 제거 ㅠ
         System.out.println();

@@ -1,4 +1,5 @@
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -6,16 +7,35 @@ public class AppDelete {
     
     public void DeleteFunction(Statement statement, Scanner scanner) {
         // 커맨드 받기.
-        System.out.print("이름을 입력해주세요 : ");
-        String name = scanner.next();
-        System.out.print("비밀번호를 입력해주세요 : ");
-        String password = scanner.next();
-        System.out.println();
-        String query = "SELECT * FROM user WHERE NAME = '" + name + "' AND PASSWORD = '" + password + "';";
 
+        String query;
+        ResultSet resultSet;
+        String name;
+        String password;
+        while(true){
+            System.out.print("- 이름을 입력해주세요 : ");
+            name = scanner.next();
+            System.out.print("- 비밀번호를 입력해주세요 : ");
+            password = scanner.next();
+            query = "SELECT * FROM user WHERE NAME = '" + name + "' AND PASSWORD = '" + password + "';";
+
+            try {
+                resultSet = statement.executeQuery(query);
+                if(!resultSet.isBeforeFirst()){
+                    System.out.println("\n-------------------------------------------------------------------------------------"+
+                    "회원정보가 일치하지 않습니다, 다시 시도해주세요."
+                    +"-------------------------------------------------------------------------------------\n");
+                }
+                else{
+                    break;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        
         try {
 
-            ResultSet resultSet = statement.executeQuery(query);
             // ResultSet resultSet2 = statement.executeQuery(query);
 
             if (resultSet.isBeforeFirst()) {
@@ -42,23 +62,21 @@ public class AppDelete {
 
                         if (!rst.isBeforeFirst()) {
 
-                            System.out.println("삭제가 완료되었습니다.");
+                            System.out.println(name + "님의 설문내역이 삭제되었습니다.");
                             flag = false;
 
                         }
 
                     } else if (yORn.equals("N")) {
-                        System.out.println("메인으로 돌아갑니다.");
+                        System.out.println("\n메인으로 돌아갑니다.");
                         flag = false;
                     } else {
-                        System.out.println("다시 입력해주세요.");
+                        System.out.println("다시 입력해주세요.\n");
                         System.out.print("개인설문내역을 삭제하시겠습니까? [Y/N] : ");
                         yORn = scanner.next();
 
                     }
                 }
-            } else {
-                System.out.println("회원정보가 일치하지 않습니다, 다시 시도해주세요.");
             }
             System.out.println();
             //버퍼 제거 ㅠ
